@@ -1,0 +1,157 @@
+/*
+SPACING
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+
+$color-primary: #ec5453;
+$color-lightgrey1: #b2becd;
+$color-lightgrey2: rgb(97, 106, 117);
+$color-grey1: #2a2e35;
+$color-grey2: #1d1e24;
+$color-grey3: #12181b;
+
+$color-font1: $color-lightgrey1;
+$color-link1: $color-lightgrey2;
+$color-background: $color-grey3;
+$color-tag: $color-grey3;
+
+$nav-top-height: 6rem;
+$color-link-hover: #fff;
+
+/* 
+Colors:
+Primary: #e67e22
+Tint:
+Shades:
+Accents:
+Greys: #555 #333 
+*/
+
+/* ------------------------ */
+/* GLOBAL STYLES/RESETS */
+/* ------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "rubik", sans-serif;
+  font-size: 62.5%; /*font-size: 10px = 1rem*/
+  line-height: 1.5;
+  color: $color-font1;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: $color-background;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* ------------------------ */
+/* GENERAL STYLES*/
+/* ------------------------ */
+
+button {
+  display: inline-block;
+  cursor: pointer;
+  font-weight: 600;
+  line-height: 1;
+  padding: 1rem;
+  border: 0;
+}
+
+button:hover {
+  filter: brightness(0.9);
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: blue;
+}
+
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+
+ul {
+  padding-inline-start: 4rem;
+}
+
+li {
+  line-height: 2;
+}
+
+input {
+  outline: none;
+}
+
+svg {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+p {
+  font-family: "rubik", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: $color-font1;
+}
+
+/* ------------------------ */
+/* BASE LAYOUT STYLES*/
+/* ------------------------ */
+main {
+  padding-top: $nav-top-height;
+}
+
+h2 {
+  font-size: 3.2rem;
+  margin: 3rem 10rem;
+}
+
+h3 {
+  color: #fff;
+  margin: 1rem 0rem;
+  font-size: 1.8rem;
+}
+
+p {
+  margin: 2rem 0rem;
+}

@@ -1,0 +1,91 @@
+//NAV
+.nav-top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: $color-grey1;
+  height: $nav-top-height;
+}
+
+.nav-top-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 100%;
+  padding: 0rem 2rem;
+}
+
+//NAV LIST
+.nav-top ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  height: 100%;
+  padding: 0;
+
+  list-style: none;
+}
+
+.nav-top li {
+  height: 100%;
+}
+
+.nav-top a {
+  display: flex;
+  align-items: center;
+
+  color: $color-link1;
+  font-size: 2rem;
+  font-weight: 500;
+
+  padding: 0rem 1rem;
+  height: 100%;
+}
+
+.nav-top a:hover {
+  text-decoration: none;
+  color: $color-link-hover;
+}
+
+//SEARCH
+.search-box {
+  display: flex;
+  gap: 2px;
+}
+
+.search-box input {
+  background-color: $color-lightgrey2;
+  border-radius: 10px 0px 0px 10px;
+  border: 0;
+  padding-left: 1rem;
+  color: $color-font1;
+}
+
+.search-box input:hover {
+  //border: 1px solid black;
+  box-shadow: inset 0px 0px 1px 1px $color-grey1;
+}
+
+.search-box input:focus {
+  border: 0;
+}
+
+.search-box button {
+  background-color: $color-lightgrey2;
+  border-radius: 0px 10px 10px 0px;
+}
+
+.search-box svg {
+  stroke: $color-grey2;
+}
+
+//LOGO
+.logo {
+  height: 4rem;
+  width: 4rem;
+  stroke: $color-primary;
+  fill: $color-primary;
+}

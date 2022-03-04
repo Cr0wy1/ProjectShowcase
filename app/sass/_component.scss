@@ -1,0 +1,50 @@
+//TAGS
+
+.tag:link,
+.tag:visited {
+  font-size: 1.4rem;
+  background-color: #ffcb2b;
+  padding: 0.2rem;
+  color: $color-tag;
+  padding: 0.3rem 0.8rem;
+  border-radius: 3px;
+}
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+//PREVIEW GRID
+.preview-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
+
+  width: 100%;
+}
+
+//PREVIEW CARD
+.preview-card {
+  background-color: $color-grey1;
+  max-width: 40rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s;
+}
+
+.preview-card:hover {
+  transform: translateY(-6px);
+}
+
+.preview-card img {
+  border-radius: 10px 10px 0px 0px;
+}
+
+.preview-card-content {
+  padding: 2rem;
+}

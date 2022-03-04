@@ -1,0 +1,24 @@
+{
+  "name": "oskarshomepage2021",
+  "version": "1.0.0",
+  "description": "A Website about my own projects",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel app/app.js",
+    "build": "parcel build --no-minify app/app.js",
+    "scss": "sass --watch app/sass/main.scss app/public/css/main.css",
+    "demon": "nodemon -e js,html ./app/app.js",
+    "dev": "npm-run-all --parallel scss demon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Oskar Konczarek",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "lodash-es": "^4.17.21"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.49.7"
+  }
+}
