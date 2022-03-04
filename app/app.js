@@ -3,6 +3,7 @@ const express = require("express");
 const { renderSync } = require("sass");
 
 const app = express();
+const port = process.env.PORT || 3000; //Heroku Enviroment port, else 3000
 
 // Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, "public");
@@ -22,6 +23,7 @@ app.get("/", (req, res) => {
 app.all("*", (req, res) => {
   res.status(404).send("<h1>Resource not found 404</h1>");
 });
-app.listen(3000, () => {
+
+app.listen(port, () => {
   console.log("Server is up on port 3000.");
 });

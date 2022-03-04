@@ -4,8 +4,9 @@
   "description": "A Website about my own projects",
   "main": "index.html",
   "scripts": {
-    "start": "parcel app/app.js",
-    "build": "parcel build --no-minify app/app.js",
+    "start": "node app/app.js",
+    "parcelstart": "parcel app/app.js",
+    "parcelbuild": "parcel build --no-minify app/app.js",
     "scss": "sass --watch app/sass/main.scss app/public/css/main.css",
     "demon": "nodemon -e js,html ./app/app.js",
     "dev": "npm-run-all --parallel scss demon",
