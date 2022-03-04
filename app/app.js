@@ -1,6 +1,6 @@
 const path = require("path");
 const express = require("express");
-const { renderSync } = require("sass");
+//const { renderSync } = require("sass");
 
 const app = express();
 const port = process.env.PORT || 3000; //Heroku Enviroment port, else 3000
