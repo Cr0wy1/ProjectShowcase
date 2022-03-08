@@ -1,0 +1,19 @@
+{
+  "data": [
+    { "id": 1, "title": "Javascript", "bgcolor": "#f0db4f", "color": "#000" },
+    { "id": 2, "title": "HTML", "bgcolor": "#E44D26", "color": "#fff" },
+    { "id": 3, "title": "CSS", "bgcolor": "#379AD6", "color": "#000" },
+    { "id": 4, "title": "C++", "bgcolor": "#0180CD", "color": "#fff" },
+    {
+      "id": 5,
+      "title": "Unreal Engine 4",
+      "bgcolor": "#041651",
+      "color": "#fff"
+    },
+    { "id": 6, "title": "Node", "bgcolor": "#84BB00", "color": "#000" },
+    { "id": 7, "title": "Interactive", "bgcolor": "#f954be", "color": "#000" },
+    { "id": 8, "title": "Blender", "bgcolor": "#FA861A", "color": "#000" },
+    { "id": 9, "title": "Games", "bgcolor": "#77C3B0", "color": "#000" },
+    { "id": 10, "title": "Web", "bgcolor": "#FFC100", "color": "#000" }
+  ]
+}

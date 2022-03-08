@@ -1,0 +1,34 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "title": "PROJECT_NAME",
+      "description": "PROJECT_DESCTIPTION",
+      "image": "img/MazeGenerationTest.png",
+      "video": "https://www.youtube.com/watch?v=VWqaRRbBiwA",
+      "tags": [1, 3, 5, 10],
+      "dateCreate": "Gestern",
+      "dateUpload": "Heute"
+    },
+    {
+      "id": 2,
+      "title": "PROJECT_NAME",
+      "description": "img/MazeGenerationTest.png",
+      "image": "img/MazeGenerationTest.png",
+      "video": "https://www.youtube.com/watch?v=VWqaRRbBiwA",
+      "tags": [1, 2, 3, 4],
+      "dateCreate": "Gestern",
+      "dateUpload": "Heute"
+    },
+    {
+      "id": 3,
+      "title": "PROJECT_NAME",
+      "description": "img/MazeGenerationTest.png",
+      "image": "img/MazeGenerationTest.png",
+      "video": "https://www.youtube.com/watch?v=VWqaRRbBiwA",
+      "tags": [1, 2, 3, 4],
+      "dateCreate": "Gestern",
+      "dateUpload": "Heute"
+    }
+  ]
+}

@@ -18,7 +18,7 @@ class PreviewCardView extends View {
       <div class="tags-container">`;
 
     this._data.tags.forEach(tag => {
-      markup += `<a href="#" class="tag">${tag}</a>`;
+      markup += `<a href="#" class="tag" style="background-color:${tag.bgcolor}; color:${tag.color}">${tag.title}</a>`;
     });
 
     markup += `</div></div></div>`;
