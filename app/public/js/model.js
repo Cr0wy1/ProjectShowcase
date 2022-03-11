@@ -28,6 +28,11 @@ class ModalData {
     this.tags = data[0].data;
     this.projects = data[1].data;
   }
+
+  GetProjectById(id) {
+    const foundProject = this.projects.find(project => project.id === id);
+    return foundProject;
+  }
 }
 
 export default new ModalData();

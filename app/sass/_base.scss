@@ -21,6 +21,8 @@ $color-tag: $color-grey3;
 $nav-top-height: 6rem;
 $color-link-hover: #fff;
 
+$color-selection: #09c372;
+
 /* 
 Colors:
 Primary: #e67e22
@@ -137,13 +139,19 @@ p {
 /* ------------------------ */
 /* BASE LAYOUT STYLES*/
 /* ------------------------ */
+::selection {
+  color: #fff;
+  background-color: $color-selection;
+}
+
 main {
-  padding-top: $nav-top-height;
+  margin: 0 auto;
+  padding: $nav-top-height 10rem 0 10rem;
 }
 
 h2 {
   font-size: 3.2rem;
-  margin: 3rem 10rem;
+  margin: 3rem 0rem;
   border-bottom: 2px dashed $color-grey1;
 }
 

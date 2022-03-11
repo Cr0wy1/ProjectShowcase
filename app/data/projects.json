@@ -2,33 +2,36 @@
   "data": [
     {
       "id": 1,
-      "title": "PROJECT_NAME",
+      "title": "PROJECT_NAME1",
+      "shortDescription": "PROJECT_SHORT_DESCTIPTION",
       "description": "PROJECT_DESCTIPTION",
       "image": "img/MazeGenerationTest.png",
-      "video": "https://www.youtube.com/watch?v=VWqaRRbBiwA",
+      "videoCode": "VWqaRRbBiwA",
       "tags": [1, 3, 5, 10],
-      "dateCreate": "Gestern",
-      "dateUpload": "Heute"
+      "dateCreate": "2022-3-11",
+      "dateUpload": "2022-3-11"
     },
     {
       "id": 2,
-      "title": "PROJECT_NAME",
-      "description": "img/MazeGenerationTest.png",
+      "title": "PROJECT_NAME2",
+      "shortDescription": "PROJECT_SHORT_DESCTIPTION",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Istedistinctio suscipit nisi odit officia expedita deleniti possimusaccusantium molestiae quidem? Reiciendis sequi omnis perferendis.Voluptatibus eius porro debitis assumenda excepturi!",
       "image": "img/MazeGenerationTest.png",
-      "video": "https://www.youtube.com/watch?v=VWqaRRbBiwA",
+      "videoCode": "VWqaRRbBiwA",
       "tags": [1, 2, 3, 4],
-      "dateCreate": "Gestern",
-      "dateUpload": "Heute"
+      "dateCreate": "2022-3-11",
+      "dateUpload": "2022-3-11"
     },
     {
       "id": 3,
-      "title": "PROJECT_NAME",
-      "description": "img/MazeGenerationTest.png",
+      "title": "PROJECT_NAME3",
+      "shortDescription": "PROJECT_SHORT_DESCTIPTION",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste distinctio suscipit nisi oditofficia expedita deleniti possimusaccusantium molestiae quidem? Reiciendis sequi omnis perferendis.Voluptatibus eius porro debitis assumenda excepturi!Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste distinctio suscipit nisi oditofficia expedita deleniti possimusaccusantium molestiae quidem? Reiciendis sequi omnis perferendis.Voluptatibus eius porro debitis assumenda excepturi!Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste distinctio suscipit nisi oditofficia expedita deleniti possimusaccusantium molestiae quidem? Reiciendis sequi omnis perferendis.Voluptatibus eius porro debitis assumenda excepturi!",
       "image": "img/MazeGenerationTest.png",
-      "video": "https://www.youtube.com/watch?v=VWqaRRbBiwA",
+      "videoCode": "VWqaRRbBiwA",
       "tags": [1, 2, 3, 4],
-      "dateCreate": "Gestern",
-      "dateUpload": "Heute"
+      "dateCreate": "2022-3-11",
+      "dateUpload": "2022-3-11"
     }
   ]
 }

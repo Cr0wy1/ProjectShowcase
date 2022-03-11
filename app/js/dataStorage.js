@@ -28,6 +28,7 @@ const Projects = {
 
 const addProject = function (project) {
   const projects = loadProjects();
+  console.log(projects);
 };
 
 const saveProjects = function () {
@@ -42,4 +43,6 @@ const loadTags = function () {
   return JSON.parse(fs.readFileSync(tagsPath).toString());
 };
 
-module.exports = Tags;
+module.exports = {
+  addProject: addProject
+};

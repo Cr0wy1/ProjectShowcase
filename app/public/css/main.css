@@ -120,13 +120,19 @@ p {
 /* ------------------------ */
 /* BASE LAYOUT STYLES*/
 /* ------------------------ */
+::selection {
+  color: #fff;
+  background-color: #09c372;
+}
+
 main {
-  padding-top: 6rem;
+  margin: 0 auto;
+  padding: 6rem 10rem 0 10rem;
 }
 
 h2 {
   font-size: 3.2rem;
-  margin: 3rem 10rem;
+  margin: 3rem 0rem;
   border-bottom: 2px dashed #2a2e35;
 }
 
@@ -141,6 +147,7 @@ p {
 }
 
 .nav-top {
+  z-index: 10;
   position: fixed;
   top: 0;
   width: 100%;
@@ -266,6 +273,44 @@ p {
 
 .preview-card-content {
   padding: 2rem;
+  height: 26rem;
+  overflow-y: hidden;
+}
+
+.preview-card-content p {
+  height: 10rem;
+  overflow: hidden;
+}
+
+.projectCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.projectContainer {
+  flex-direction: column;
+  width: 1280px;
+}
+
+.ytvideo-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+
+.ytvideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.project-info {
+  background-color: #2a2e35;
+  padding: 2rem 4rem;
 }
 
 /*# sourceMappingURL=main.css.map */
