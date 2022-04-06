@@ -1,0 +1,22 @@
+.voronoiContainer {
+  display: flex;
+}
+
+.voronoiParams {
+  background-color: $color-grey1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.paramInput {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#voronoiAmountText {
+  padding-left: 4px;
+  width: 32px;
+}

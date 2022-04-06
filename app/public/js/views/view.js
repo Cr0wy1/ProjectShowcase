@@ -34,6 +34,7 @@ export default class View {
   setMarkup(markup) {
     this._clear();
     this._parentElement.insertAdjacentHTML("afterbegin", markup);
+    this._loadScripts();
   }
 
   renderError(message = this._errorMessage) {

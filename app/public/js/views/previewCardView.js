@@ -25,6 +25,8 @@ class PreviewCardView extends View {
 
     return markup;
   }
+
+  _loadScripts() {}
 }
 
 export default new PreviewCardView();

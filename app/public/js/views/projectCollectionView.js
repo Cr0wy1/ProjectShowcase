@@ -30,6 +30,8 @@ class ProjectCollectionView extends View {
   RegisterEvents() {
     this.OnProjectClickEvent();
   }
+
+  _loadScripts() {}
 }
 
 export default new ProjectCollectionView();

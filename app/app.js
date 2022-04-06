@@ -34,12 +34,13 @@ app.get("/newProject", (req, res) => {
     description: req.query.description,
     image: req.query.image,
     videoCode: req.query.videoCode,
+    scriptName: req.query.scriptName,
     tags: req.query.tags,
     dateCreate: req.query.dateCreate,
     dateUpload: today
   });
-  console.log(dataStorage);
-  console.log(req.query);
+  //console.log(dataStorage);
+  //console.log(req.query);
 
   //res.send("Hello World");
   //res.render("index", {});
@@ -47,7 +48,6 @@ app.get("/newProject", (req, res) => {
 });
 
 app.use("/*", (req, res) => {
-  console.log("asd");
   //res.render("index", {});
   res.sendFile(path.join(publicDirectoryPath, "index.html"));
   //res.status(404).send("<h1>Resource not found 404</h1>");

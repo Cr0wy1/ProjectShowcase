@@ -88,3 +88,25 @@
   background-color: $color-grey1;
   padding: 2rem 4rem;
 }
+
+//FORM PROJECT ADD
+.formCenter {
+  display: flex;
+  justify-content: center;
+}
+
+.form-addproject {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-addproject input,
+textarea {
+  width: 100%;
+  padding: 0.2rem 0.6rem;
+}
+
+.form-unvalid {
+  border: 1px solid red;
+}

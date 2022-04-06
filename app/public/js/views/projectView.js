@@ -1,14 +1,35 @@
 import View from "./view.js";
+import urlPath from "./../urlPath.js";
 
 class ProjectView extends View {
   _parentElement = document.querySelector("main");
 
   _generateMarkup() {
-    let markup = `<h2>Project - ${this._data.project.title}</h2>
+    let videoMarkup = "";
+    if (this._data.project.videoCode !== "") {
+      videoMarkup = `<div class="ytvideo-container">
+                      <iframe width="1280" height="720" class="ytvideo" src="https://www.youtube.com/embed/${this._data.project.videoCode}" frameborder="0"  allowfullscreen></iframe>
+                    </div>`;
+    }
+
+    let imagesMarkup = "";
+    if (this._data.project.images.length > 0) {
+      imagesMarkup = `<div class="projectImageGrid">`;
+
+      this._data.project.images.forEach(image => {
+        imagesMarkup += `<img src="${image}">`;
+      });
+
+      imagesMarkup += `</div>`;
+    }
+
+    let markup = `<h2>${this._data.project.title}</h2>
     <div class="projectCenter">
       <div class="projectContainer">
-        <div class="ytvideo-container">
-          <iframe width="1280" height="720" class="ytvideo" src="https://www.youtube.com/embed/${this._data.project.videoCode}" frameborder="0"  allowfullscreen></iframe>
+        <div class="projectContent">
+        
+        ${videoMarkup}
+        ${imagesMarkup}
         </div>
         <div class="project-info">
           <span class="project-dateCreate">
@@ -29,6 +50,23 @@ class ProjectView extends View {
     `;
 
     return markup;
+  }
+
+  _loadScripts() {
+    if (this._data.project.scripts && this._data.project.scripts.length > 0) {
+      urlPath.ReloadNext();
+
+      this._data.project.scripts.forEach(script => {
+        var scriptElem = document.createElement("script");
+        scriptElem.setAttribute("defer", "defer");
+        if (script.type === "module") {
+          scriptElem.type = "module";
+        }
+
+        scriptElem.setAttribute("src", `./js/scripts/${script.name}.js`); //[{"name": "voronoi-core", "type": "script"}, {name"voronoi"}]
+        this._parentElement.appendChild(scriptElem);
+      });
+    }
   }
 }
 

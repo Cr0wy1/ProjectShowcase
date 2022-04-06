@@ -55,6 +55,8 @@ class NavTopView extends View {
     return markup;
   }
 
+  _loadScripts() {}
+
   RegisterEvents() {
     this._LinkHandler();
   }
