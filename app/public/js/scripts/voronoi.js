@@ -4,8 +4,8 @@ import ColorRGBA, { Color, RGBA } from "./color.js";
 import VoronoiView from "./../views/voronoiView.js";
 import voronoiView from "./../views/voronoiView.js";
 
-let width = 700;
-let height = 700;
+let width = 960;
+let height = 600;
 let amount = 10;
 let motionSpeed = 2;
 let bbox = { xl: 0, xr: width, yt: 0, yb: height }; // xl is x-left, xr is x-right, yt is y-top, and yb is y-bottom
@@ -23,7 +23,7 @@ const projectContainer = document.querySelector(".voronoiCanvas");
 const main = document.querySelector("main");
 
 //Create Canvas
-var canvas = document.createElement("canvas");
+var canvas = VoronoiView.GetCanvas();
 canvas.width = width;
 canvas.height = height;
 projectContainer.insertAdjacentElement("afterbegin", canvas);
@@ -84,31 +84,6 @@ function Reset() {
   Reload();
 }
 
-function CreateVoronoi() {
-  compute();
-
-  draw.fillColor(RGBA(255, 0, 0));
-  draw.circle(points[0], 10, true);
-  let targetCell = diagram.cells[points[0].voronoiId];
-  let halfEdges = targetCell.halfedges;
-  draw.strokeColor(RGBA(0, 255, 0));
-
-  let v = halfEdges[0].getStartpoint();
-  draw.ctx.beginPath();
-  draw.ctx.moveTo(v.x, v.y);
-  for (let i = 0; i < halfEdges.length; i++) {
-    let v = halfEdges[i].getEndpoint();
-    draw.ctx.lineTo(v.x, v.y);
-    // draw.line(
-    //   P(targetEdge.va.x, targetEdge.va.y),
-    //   P(targetEdge.vb.x, targetEdge.vb.y)
-    // );
-  }
-
-  draw.ctx.fillStyle = "#faa";
-  draw.ctx.fill();
-}
-
 function createPoints() {
   points = [];
   for (let i = 0; i < amount; i++) {
@@ -163,7 +138,7 @@ function DrawPoints() {
 function DrawEdges() {
   draw.strokeColor(RGBA(0, 0, 0));
   draw.fillColor(RGBA(0, 0, 0));
-  draw.strokeWidth(1);
+  draw.strokeWidth(3);
 
   draw.ctx.beginPath();
 
@@ -226,5 +201,3 @@ function ChangeVelocitys() {
 }
 
 Reset();
-
-console.log("Voronoi active", projectContainer);

@@ -20,14 +20,10 @@ class NavTopView extends View {
       </svg>
       <ul>
         <li><a class="nav-link" href="Index">Startseite</a></li>
-        <li>
-          <a class="nav-link" href="AddProject"
-            >Project hinzufügen</a
-          >
-        </li>
-        <li><a class="nav-link" href="">Startseite</a></li>
-        <li><a class="nav-link" href="">Startseite</a></li>
-        <li><a class="nav-link" href="">Startseite</a></li>
+        <li><a class="nav-link" href="Interactive">Interactive</a></li>
+        <li><a class="nav-link" href="3DModels">3D Models</a></li>
+        <li><a class="nav-link" href="UnrealEngine">Unreal Engine</a></li>
+        <li><a class="nav-link" href="AddProject">Project hinzufügen</a></li>
       </ul>
       <div class="search-box">
         <input type="text" />
@@ -70,8 +66,8 @@ class NavTopView extends View {
         const href = elem.target.getAttribute("href");
         if (href === "Index") {
           urlPath.SetPath("/");
-        } else if (href === "AddProject") {
-          urlPath.SetPath("AddProject");
+        } else {
+          urlPath.SetPath(href);
         }
       });
     });

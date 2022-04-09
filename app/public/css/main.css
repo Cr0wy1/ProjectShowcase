@@ -334,6 +334,24 @@ textarea {
   border: 1px solid red;
 }
 
+.drawProjectContainer {
+  display: flex;
+}
+
+.drawProjectParams {
+  background-color: #2a2e35;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.paramInput {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .voronoiContainer {
   display: flex;
 }

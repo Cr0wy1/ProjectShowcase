@@ -33,6 +33,18 @@ class ModalData {
     const foundProject = this.projects.find(project => project.id === id);
     return foundProject;
   }
+
+  GetAllWithTagId(tagId) {
+    return this.projects.filter(project =>
+      project.tags.some(tag => tag.id === tagId)
+    );
+  }
+
+  GetAllWithTagName(tagName) {
+    return this.projects.filter(project =>
+      project.tags.some(tag => tag.title === tagName)
+    );
+  }
 }
 
 export default new ModalData();

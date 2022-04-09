@@ -22,19 +22,25 @@ const body = document.querySelector("body");
 const OnUrlUpdate = function (query) {
   console.log("path", query.path);
   if (query.path === "") {
-    ShowProjectGrid();
+    ShowProjectGrid(modalData.projects);
   } else if (query.path === "AddProject") {
     ShowAddProject();
   } else if (query.path === "project") {
     if (query.params.id) {
       ShowProject(query.params.id);
     }
+  } else if (query.path === "Interactive") {
+    ShowProjectGrid(modalData.GetAllWithTagId(7)); //tagId 7 => Interactive
+  } else if (query.path === "3DModels") {
+    ShowProjectGrid(modalData.GetAllWithTagId(12)); //tagId 12 => 3DModels
+  } else if (query.path === "UnrealEngine") {
+    ShowProjectGrid(modalData.GetAllWithTagId(5)); //tagId 5 => UnrealEngine
   }
 };
 
-const ShowProjectGrid = function () {
+const ShowProjectGrid = function (projects) {
   projectCollectionView.render({
-    items: modalData.projects
+    items: projects
   });
   projectCollectionView.RegisterEvents();
 };
@@ -58,22 +64,3 @@ const init = function () {
   urlPath._CallPathUpdateEvent();
 };
 init();
-
-// const canvas = document.getElementById("myCanvas");
-// const draw = new Draw(canvas);
-// draw.background(RGBA(120, 22, 200, 1));
-// draw.line(P(10, 10), P(100, 100));
-
-// //draw.fillColor(Color.black());
-// console.log(draw);
-
-// //draw.strokeWidth(1);
-// //draw.strokeColor(RGBA(255, 0, 0));
-// //draw.fillColor(RGBA().random());
-// //draw.circle(P(100, 100), 100, true);
-
-// draw.pixel(P(200, 200));
-
-// //let p1 = new Point(1, 2);
-// //let p2 = new Point(5, -1);
-// //console.log(p1.add(1, -10));

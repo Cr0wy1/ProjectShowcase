@@ -14,6 +14,7 @@ export default class Draw {
 
   line(point1, point2) {
     if (point1 instanceof Point && point2 instanceof Point) {
+      this.ctx.beginPath();
       this.ctx.moveTo(point1.x, point1.y);
       this.ctx.lineTo(point2.x, point2.y);
       this.ctx.stroke();
@@ -63,6 +64,21 @@ export default class Draw {
       this.ctx.stroke();
     } else {
       console.log("Draw circle: point is not a Point");
+    }
+  }
+
+  rect(point, width, height, bFill = false) {
+    if (point instanceof Point) {
+      this.ctx.beginPath();
+
+      this.ctx.rect(point.x, point.y, width, height);
+      if (bFill === true) {
+        this.ctx.fill();
+      }
+
+      this.ctx.stroke();
+    } else {
+      console.log("Draw rect: point is not a Point");
     }
   }
 

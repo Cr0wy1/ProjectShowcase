@@ -10,7 +10,7 @@ class VoronoiView extends View {
                             <label>Colored areas:</label><input type="checkbox" checked id="voronoiColoredAreasCheckbox" >
                         </div>
                         <div class="paramInput">
-                            <label>Area center points:</label><input type="checkbox" checked id="voronoiCenterPointsCheckbox">
+                            <label>Center points:</label><input type="checkbox" id="voronoiCenterPointsCheckbox">
                         </div>
                         <div class="paramInput">
                             <label>Edges:</label><input type="checkbox" checked id="voronoiEdgesCheckbox">
@@ -21,13 +21,19 @@ class VoronoiView extends View {
                         <button id="voronoiToggleMotion">Start Motion</button>
                         <button id="voronoiReset">Generate</button>
                     </div>
-                    <div class="voronoiCanvas"></div>
+                    <div class="voronoiCanvas">
+                      <canvas id="projectCanvas" width="400" height="400">
+                    </div>
     </div>`;
 
     return markup;
   }
 
   _loadScripts() {}
+
+  GetCanvas() {
+    return document.querySelector("#projectCanvas");
+  }
 
   RegisterEvents() {
     const amountSlider = document.querySelector("#voronoiAmountSlider");

@@ -1,3 +1,23 @@
+//CANVAS PROJECT
+.drawProjectContainer {
+  display: flex;
+}
+
+.drawProjectParams {
+  background-color: $color-grey1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.paramInput {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+//VORONOI DIAGRAM
 .voronoiContainer {
   display: flex;
 }
