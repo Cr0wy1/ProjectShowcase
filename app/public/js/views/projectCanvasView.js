@@ -54,9 +54,8 @@ class ProjectCanvasView extends View {
     const slider = document.querySelector(`#${id}`);
     const span = document.querySelector(`#${id}-span`);
 
-    slider.addEventListener("change", function (e) {
-      span.innerHTML = slider.value;
-    });
+    span.innerHTML = slider.value;
+    slider.addEventListener("input", () => (span.innerHTML = slider.value));
 
     return slider;
   }
@@ -73,9 +72,28 @@ class ProjectCanvasView extends View {
     return document.querySelector(`#${id}`);
   }
 
+  AddCanvasDownload(imageName = "canvas") {
+    this.AddButton("Download Image").addEventListener(
+      "click",
+      this.DownloadCanvas.bind(this, imageName)
+    );
+  }
+
   OnParamsUpdate(callback) {
     const params = document.querySelector(".drawProjectParams");
     params.addEventListener("change", callback);
+  }
+
+  DownloadCanvas(imageName) {
+    if (typeof imageName !== "string") {
+      imageName = "canvas";
+    }
+
+    const data = this.GetCanvas().toDataURL("image/png");
+    const tempLink = document.createElement("a");
+    tempLink.href = data;
+    tempLink.download = `${imageName}.png`;
+    tempLink.click();
   }
 
   GetParams() {

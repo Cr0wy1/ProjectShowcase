@@ -56,6 +56,25 @@ export default class Point {
     return x * x + y * y;
   }
 
+  rotate(angle, centerPoint) {
+    let radians = (Math.PI / 180) * -angle;
+    let sin = Math.sin(radians);
+    let cos = Math.cos(radians);
+
+    let nx =
+      cos * (this.x - centerPoint.x) +
+      sin * (this.y - centerPoint.y) +
+      centerPoint.x;
+    let ny =
+      cos * (this.y - centerPoint.y) -
+      sin * (this.x - centerPoint.x) +
+      centerPoint.y;
+
+    this.x = nx;
+    this.y = ny;
+    return this;
+  }
+
   Midpoint(point2) {
     return P((this.x + point2.x) / 2, (this.y + point2.y) / 2);
   }

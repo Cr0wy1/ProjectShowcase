@@ -15,6 +15,7 @@ import ColorRGBA, { Color, RGBA } from "./scripts/color.js";
 
 await modalData.Fetch();
 modalData.ConstructData();
+modalData.SortByRating(modalData.projects);
 
 const mainContent = document.querySelector("main");
 const body = document.querySelector("body");

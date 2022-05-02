@@ -5,9 +5,9 @@ import ColorRGBA, { Color, RGBA } from "./color.js";
 
 let width = 700;
 let height = 700;
-const cellAmount = 20;
-const cellXSize = width / cellAmount;
-const cellYSize = height / cellAmount;
+const cellAmount = 30;
+const cellXSize = Math.floor(width / cellAmount);
+const cellYSize = Math.floor(height / cellAmount);
 width += cellXSize * 2;
 height += cellYSize * 2;
 
@@ -110,9 +110,10 @@ class Path {
 
     if (this.params.type === "boxed") {
       draw.background(Color.black);
-      draw.strokeWidth(10);
+      draw.strokeWidth(0);
       draw.strokeColor(RGBA(255, 255, 255));
       draw.fillColor(RGBA(255, 255, 255));
+      this.DrawBoxed(this.cCell);
     } else if (this.params.type === "border") {
       draw.strokeWidth(5);
       draw.background(Color.black);
@@ -123,6 +124,37 @@ class Path {
     this.interval = setInterval(this.Tick.bind(this), 1);
   }
 
+  Stop() {
+    clearInterval(this.interval);
+    this.interval = null;
+  }
+
+  DrawBoxed(neighbor) {
+    let bridgePoint = P(neighbor.x - this.cCell.x, neighbor.y - this.cCell.y);
+    bridgePoint.divide(2).add(P(this.cCell.x, this.cCell.y));
+
+    P;
+    draw.rect(
+      P(
+        neighbor.x * (cellXSize / 2) * 2 + cellXSize * 1.25,
+        neighbor.y * (cellYSize / 2) * 2 + cellYSize * 1.25
+      ),
+      cellXSize / 2,
+      cellYSize / 2,
+      true
+    );
+
+    draw.rect(
+      P(
+        bridgePoint.x * (cellXSize / 2) * 2 + cellXSize * 1.25,
+        bridgePoint.y * (cellYSize / 2) * 2 + cellYSize * 1.25
+      ),
+      cellXSize / 2,
+      cellYSize / 2,
+      true
+    );
+  }
+
   Tick() {
     let neighbor = this.grid.GetRandomUnvisitedNeighbor(
       this.cCell.x,
@@ -130,32 +162,7 @@ class Path {
     );
     if (neighbor) {
       if (this.params.type === "boxed") {
-        let bridgePoint = P(
-          neighbor.x - this.cCell.x,
-          neighbor.y - this.cCell.y
-        );
-        bridgePoint.divide(2).add(P(this.cCell.x, this.cCell.y));
-
-        P;
-        draw.rect(
-          P(
-            neighbor.x * (cellXSize / 2) * 2 + cellXSize * 1.25,
-            neighbor.y * (cellYSize / 2) * 2 + cellYSize * 1.25
-          ),
-          cellXSize / 2,
-          cellYSize / 2,
-          true
-        );
-
-        draw.rect(
-          P(
-            bridgePoint.x * (cellXSize / 2) * 2 + cellXSize * 1.25,
-            bridgePoint.y * (cellYSize / 2) * 2 + cellYSize * 1.25
-          ),
-          cellXSize / 2,
-          cellYSize / 2,
-          true
-        );
+        this.DrawBoxed(neighbor);
       } else if (this.params.type === "border") {
         const adjunct1 = P(this.cCell.x, this.cCell.y).add(
           P(-neighbor.x, -neighbor.y)
@@ -181,7 +188,7 @@ class Path {
     } else {
       this.pathCells.pop();
       if (this.pathCells.length <= 0) {
-        clearInterval(this.interval);
+        this.Stop();
       } else {
         this.cCell = this.pathCells[this.pathCells.length - 1];
       }
@@ -191,24 +198,28 @@ class Path {
 
 projectCanvasView.render({}, true);
 projectCanvasView.AddSelection("Type", ["boxed", "border"]);
+projectCanvasView.AddCanvasDownload("Maze");
 projectCanvasView.AddButton("Generate").addEventListener("click", Reset);
 projectCanvasView.OnParamsUpdate(OnParamsUpdate);
 const canvas = projectCanvasView.GetCanvas();
 canvas.width = width;
 canvas.height = height;
 const draw = new Draw(canvas);
+let grid = new Grid(cellAmount, cellAmount);
+let path = new Path(grid);
 
 Reset();
 
 function Reset() {
+  path.Stop();
   draw.background(Color.white);
-  const grid = new Grid(cellAmount, cellAmount);
-  const path = new Path(grid);
+  grid = new Grid(cellAmount, cellAmount);
+  path = new Path(grid);
   path.Start(draw);
 }
 
 function OnParamsUpdate() {
-  console.log("asd", projectCanvasView.GetParams());
+  Reset();
 }
 
 //grid.Draw(draw);

@@ -45,6 +45,15 @@ class ModalData {
       project.tags.some(tag => tag.title === tagName)
     );
   }
+
+  SortByRating(projects) {
+    if (projects.length > 0) {
+      projects.sort((a, b) => {
+        return a.rating < b.rating ? 1 : -1;
+      });
+    }
+    return projects;
+  }
 }
 
 export default new ModalData();
