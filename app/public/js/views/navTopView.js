@@ -22,12 +22,11 @@ class NavTopView extends View {
         <li><a class="nav-link" href="Index">Startseite</a></li>
         <li><a class="nav-link" href="Interactive">Interactive</a></li>
         <li><a class="nav-link" href="3DModels">3D Models</a></li>
-        <li><a class="nav-link" href="UnrealEngine">Unreal Engine</a></li>
-        <li><a class="nav-link" href="AddProject">Project hinzufügen</a></li>
+        <li><a class="nav-link" href="UnrealEngine">Unreal Engine</a></li> 
       </ul>
       <div class="search-box">
-        <input type="text" />
-        <button>
+        <input type="text" class="searchInput"/>
+        <button class="searchButton">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="icon"
@@ -55,6 +54,7 @@ class NavTopView extends View {
 
   RegisterEvents() {
     this._LinkHandler();
+    this._SearchHandler();
   }
 
   _LinkHandler() {
@@ -70,6 +70,24 @@ class NavTopView extends View {
           urlPath.SetPath(href);
         }
       });
+    });
+  }
+
+  _SearchHandler() {
+    const searchBtn = document.querySelector(".searchButton");
+    const searchInput = document.querySelector(".searchInput");
+    searchBtn.addEventListener("click", function () {
+      if (searchInput.value !== "") {
+        urlPath.SetPath("/", { search: searchInput.value });
+      }
+    });
+    searchInput.addEventListener("keypress", function (e) {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        if (searchInput.value !== "") {
+          urlPath.SetPath("/", { search: searchInput.value });
+        }
+      }
     });
   }
 }

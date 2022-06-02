@@ -5,6 +5,11 @@ class ProjectView extends View {
   _parentElement = document.querySelector("main");
 
   _generateMarkup() {
+    let modelMarkup = "";
+    if (this._data.project.model !== "") {
+      modelMarkup += `<div class="modelCanvasContainer" data-model="${this._data.project.model}"></div>`;
+    }
+
     let videoMarkup = "";
     if (this._data.project.videoCode !== "") {
       videoMarkup = `<div class="ytvideo-container">
@@ -27,7 +32,7 @@ class ProjectView extends View {
     <div class="projectCenter">
       <div class="projectContainer">
         <div class="projectContent">
-        
+        ${modelMarkup}
         ${videoMarkup}
         ${imagesMarkup}
         </div>
@@ -57,7 +62,7 @@ class ProjectView extends View {
       urlPath.ReloadNext();
 
       this._data.project.scripts.forEach(script => {
-        var scriptElem = document.createElement("script");
+        let scriptElem = document.createElement("script");
         scriptElem.setAttribute("defer", "defer");
         if (script.type === "module") {
           scriptElem.type = "module";
@@ -67,6 +72,36 @@ class ProjectView extends View {
         this._parentElement.appendChild(scriptElem);
       });
     }
+
+    // let scriptElem = document.createElement("script");
+    // scriptElem.setAttribute("defer", "defer");
+    // scriptElem.setAttribute("src", `./js/scripts/three.min.js`);
+    // this._parentElement.appendChild(scriptElem);
+
+    let scriptElem = document.createElement("script");
+    scriptElem.setAttribute("defer", "defer");
+    scriptElem.type = "module";
+    scriptElem.setAttribute("src", `./js/scripts/model3DView.js`);
+    this._parentElement.appendChild(scriptElem);
+
+    // let scene, camera, renderer;
+
+    // scene = new THREE.Scene();
+    // scene.background = new THREE.Color(0xdddddd);
+
+    // camera = new THREE.PerspectiveCamera(
+    //   40,
+    //   window.innerWidth / window.innerHeight,
+    //   1,
+    //   5000
+    // );
+
+    // hlight = new THREE.AmbientLight(0x404040, 100);
+    // scene.add(hlight);
+
+    // renderer = new THREE.WebGLRenderer({ antialias: true });
+    // renderer.setSize(window.innerWidth, window.innerHeight);
+    // document.body.appendChild(renderer.domElement);
   }
 }
 

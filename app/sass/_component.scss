@@ -84,6 +84,11 @@
   border: 0;
 }
 
+.modelCanvasContainer {
+  display: flex;
+  justify-content: center;
+}
+
 .project-info {
   background-color: $color-grey1;
   padding: 2rem 4rem;

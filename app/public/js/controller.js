@@ -23,9 +23,15 @@ const body = document.querySelector("body");
 const OnUrlUpdate = function (query) {
   console.log("path", query.path);
   if (query.path === "") {
-    ShowProjectGrid(modalData.projects);
-  } else if (query.path === "AddProject") {
-    ShowAddProject();
+    if (query.params.search) {
+      ShowProjectGrid(
+        modalData.FilterSearch(modalData.projects, query.params.search)
+      );
+    } else {
+      ShowProjectGrid(modalData.projects);
+    }
+    // } else if (query.path === "AddProject") {
+    //   ShowAddProject();
   } else if (query.path === "project") {
     if (query.params.id) {
       ShowProject(query.params.id);

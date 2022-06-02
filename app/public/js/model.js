@@ -54,6 +54,17 @@ class ModalData {
     }
     return projects;
   }
+
+  FilterSearch(projects, search) {
+    search = search.toLowerCase();
+    return this.projects.filter(
+      project =>
+        project.title.toLowerCase().includes(search) ||
+        project.shortDescription.toLowerCase().includes(search) ||
+        project.description.toLowerCase().includes(search) ||
+        project.tags.some(tag => tag.title.toLowerCase().includes(search))
+    );
+  }
 }
 
 export default new ModalData();
