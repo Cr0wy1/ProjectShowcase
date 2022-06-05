@@ -86,6 +86,8 @@ class NavTopView extends View {
         e.preventDefault();
         if (searchInput.value !== "") {
           urlPath.SetPath("/", { search: searchInput.value });
+        } else {
+          urlPath.SetPath("/", {});
         }
       }
     });

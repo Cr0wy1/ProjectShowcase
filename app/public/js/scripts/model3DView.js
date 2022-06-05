@@ -1,4 +1,5 @@
 const modelCanvasContainer = document.querySelector(".modelCanvasContainer");
+console.log("Hello");
 
 if (modelCanvasContainer && modelCanvasContainer.dataset.model) {
   Render3DView();
@@ -11,7 +12,7 @@ function Render3DView() {
   let scene, camera, renderer;
 
   scene = new THREE.Scene();
-  scene.background = new THREE.Color(0xf5f5f5);
+  scene.background = new THREE.Color(0xdcddde);
 
   camera = new THREE.PerspectiveCamera(35, SceneWidth / SceneHeight, 1, 5000);
 

@@ -78,30 +78,14 @@ class ProjectView extends View {
     // scriptElem.setAttribute("src", `./js/scripts/three.min.js`);
     // this._parentElement.appendChild(scriptElem);
 
-    let scriptElem = document.createElement("script");
-    scriptElem.setAttribute("defer", "defer");
-    scriptElem.type = "module";
-    scriptElem.setAttribute("src", `./js/scripts/model3DView.js`);
-    this._parentElement.appendChild(scriptElem);
-
-    // let scene, camera, renderer;
-
-    // scene = new THREE.Scene();
-    // scene.background = new THREE.Color(0xdddddd);
-
-    // camera = new THREE.PerspectiveCamera(
-    //   40,
-    //   window.innerWidth / window.innerHeight,
-    //   1,
-    //   5000
-    // );
-
-    // hlight = new THREE.AmbientLight(0x404040, 100);
-    // scene.add(hlight);
-
-    // renderer = new THREE.WebGLRenderer({ antialias: true });
-    // renderer.setSize(window.innerWidth, window.innerHeight);
-    // document.body.appendChild(renderer.domElement);
+    if (this._data.project.model) {
+      urlPath.ReloadNext();
+      let scriptElem = document.createElement("script");
+      scriptElem.setAttribute("defer", "defer");
+      //scriptElem.type = "module";
+      scriptElem.setAttribute("src", `./js/scripts/model3DView.js`);
+      this._parentElement.appendChild(scriptElem);
+    }
   }
 }
 

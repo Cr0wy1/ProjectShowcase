@@ -293,6 +293,12 @@ p {
   width: 1280px;
 }
 
+.projectContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
 .ytvideo-container {
   position: relative;
   width: 100%;
@@ -311,6 +317,10 @@ p {
 .modelCanvasContainer {
   display: flex;
   justify-content: center;
+}
+
+.modelCanvasContainer canvas {
+  border-radius: 20px;
 }
 
 .project-info {
