@@ -79,6 +79,8 @@ class NavTopView extends View {
     searchBtn.addEventListener("click", function () {
       if (searchInput.value !== "") {
         urlPath.SetPath("/", { search: searchInput.value });
+      } else {
+        urlPath.SetPath("/", {});
       }
     });
     searchInput.addEventListener("keypress", function (e) {

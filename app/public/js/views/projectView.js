@@ -1,5 +1,6 @@
 import View from "./view.js";
 import urlPath from "./../urlPath.js";
+import Model3DView from "../scripts/model3DView.js";
 
 class ProjectView extends View {
   _parentElement = document.querySelector("main");
@@ -73,18 +74,9 @@ class ProjectView extends View {
       });
     }
 
-    // let scriptElem = document.createElement("script");
-    // scriptElem.setAttribute("defer", "defer");
-    // scriptElem.setAttribute("src", `./js/scripts/three.min.js`);
-    // this._parentElement.appendChild(scriptElem);
-
     if (this._data.project.model) {
-      urlPath.ReloadNext();
-      let scriptElem = document.createElement("script");
-      scriptElem.setAttribute("defer", "defer");
-      //scriptElem.type = "module";
-      scriptElem.setAttribute("src", `./js/scripts/model3DView.js`);
-      this._parentElement.appendChild(scriptElem);
+      const model3DView = new Model3DView();
+      model3DView.Run();
     }
   }
 }

@@ -21,7 +21,7 @@ const mainContent = document.querySelector("main");
 const body = document.querySelector("body");
 
 const OnUrlUpdate = function (query) {
-  console.log("path", query.path);
+  scroll(0, 0);
   if (query.path === "") {
     if (query.params.search) {
       ShowProjectGrid(
