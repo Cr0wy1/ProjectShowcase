@@ -1,5 +1,5 @@
 //TAGS
-
+.tag,
 .tag:link,
 .tag:visited {
   font-size: 1.4rem;
@@ -8,6 +8,7 @@
   color: $color-tag;
   padding: 0.3rem 0.8rem;
   border-radius: 3px;
+  cursor: pointer;
 }
 
 .tags-container {

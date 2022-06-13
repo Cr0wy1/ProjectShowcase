@@ -48,7 +48,11 @@ class UrlPath {
     const params = window.location.search.replace("?", "").split("&");
     const obj = {};
     params.forEach(element => {
-      obj[element.split("=")[0]] = element.split("=")[1];
+      if (element !== "") {
+        obj[element.split("=")[0]] = element
+          .split("=")[1]
+          .replaceAll("%20", " ");
+      }
     });
 
     return obj;

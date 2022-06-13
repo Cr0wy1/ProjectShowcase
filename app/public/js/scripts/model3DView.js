@@ -2,18 +2,13 @@ export default class Model3DView {
   modelCanvasContainer = document.querySelector(".modelCanvasContainer");
 
   Run() {
-    console.log("Hello");
-
     this.modelCanvasContainer = document.querySelector(".modelCanvasContainer");
     if (this.modelCanvasContainer && this.modelCanvasContainer.dataset.model) {
       this.Render3DView();
-      console.log("Hello");
     }
   }
 
   Render3DView() {
-    console.log(this.modelCanvasContainer);
-
     let SceneWidth = 700;
     let SceneHeight = 600;
 

@@ -19,7 +19,7 @@ class NavTopView extends View {
         />
       </svg>
       <ul>
-        <li><a class="nav-link" href="Index">Startseite</a></li>
+        <li><a class="nav-link" href="Index">Home</a></li>
         <li><a class="nav-link" href="Interactive">Interactive</a></li>
         <li><a class="nav-link" href="3DModels">3D Models</a></li>
         <li><a class="nav-link" href="UnrealEngine">Unreal Engine</a></li> 

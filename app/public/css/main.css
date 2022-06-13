@@ -229,6 +229,7 @@ p {
   fill: #ec5453;
 }
 
+.tag,
 .tag:link,
 .tag:visited {
   font-size: 1.4rem;
@@ -237,6 +238,7 @@ p {
   color: #12181b;
   padding: 0.3rem 0.8rem;
   border-radius: 3px;
+  cursor: pointer;
 }
 
 .tags-container {

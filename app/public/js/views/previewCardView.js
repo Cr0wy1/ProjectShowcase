@@ -1,4 +1,5 @@
 import View from "./view.js";
+import urlPath from "./../urlPath.js";
 
 class PreviewCardView extends View {
   _parentElement = "";
@@ -18,7 +19,7 @@ class PreviewCardView extends View {
       <div class="tags-container">`;
 
     this._data.tags.forEach(tag => {
-      markup += `<a href="tag" class="tag" style="background-color:${tag.bgcolor}; color:${tag.color}">${tag.title}</a>`;
+      markup += `<a class="tag" style="background-color:${tag.bgcolor}; color:${tag.color}">${tag.title}</a>`;
     });
 
     markup += `</div></div></div>`;

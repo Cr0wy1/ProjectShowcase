@@ -6,7 +6,13 @@ class ProjectCollectionView extends View {
   _parentElement = document.querySelector("main");
 
   _generateMarkup() {
-    let markup = `<h2>Project Collection</h2>
+    let searchSubTitle = "";
+    if (urlPath.GetParams().search) {
+      searchSubTitle = ` (${urlPath.GetParams().search})`;
+    }
+    console.log(urlPath.GetParams().search);
+
+    let markup = `<h2>Project Collection${searchSubTitle}</h2>
     <div class="preview-grid">`;
 
     this._data.items.forEach(item => {
@@ -27,7 +33,18 @@ class ProjectCollectionView extends View {
     });
   }
 
+  OnTagClickEvent() {
+    const allTags = document.querySelectorAll(".tag");
+    allTags.forEach(tag => {
+      tag.addEventListener("click", function (e) {
+        e.stopPropagation();
+        urlPath.SetPath("/", { search: tag.innerHTML });
+      });
+    });
+  }
+
   RegisterEvents() {
+    this.OnTagClickEvent();
     this.OnProjectClickEvent();
   }
 
