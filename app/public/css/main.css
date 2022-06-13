@@ -38,6 +38,7 @@ html {
 body {
   font-size: 1.6rem;
   background-color: #12181b;
+  overflow-y: scroll;
 }
 
 img,
